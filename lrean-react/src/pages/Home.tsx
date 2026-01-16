@@ -5,6 +5,7 @@ function Home() {
         { id: 1, name: 'Day1：自我介绍页' },
         { id: 2, name: 'Day2：组件状态 & 事件处理' },
         { id: 3, name: 'Day3：列表渲染 & 条件渲染' },
+        { id: 6, name: 'Day6：组件通信与数据流' },
     ]
 
     return (
