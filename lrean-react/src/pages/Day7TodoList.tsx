@@ -2,16 +2,21 @@ import SectionTitle from '../components/SectionTitle'
 import { useState } from 'react'
 import TodoItem from '../components/TodoItem'
 
+type Todo = {
+    id: number
+    title: string
+    finished: boolean
+}
 
-const initialTodos =[
+const initialTodos: Todo[] =[
     { id: 1, title: '看完 Day7 课程', finished: false },
     { id: 2, title: '实现一个可以勾选的 Todo 列表', finished: false },
     { id: 3, title: '把 Day7 作业提交给 AI 老师', finished: false },
 ]
 
 export default function Day7TodoList() {
-    const [todos, setTodos] = useState(initialTodos)
-    const [input, setInput] = useState('')
+    const [todos, setTodos] = useState<Todo[]>(initialTodos)
+    const [input, setInput] = useState<string>('')
 
     // 新增 Todo 项
     const handleAdd = () => {
@@ -19,7 +24,7 @@ export default function Day7TodoList() {
             alert('请输入内容')
             return
         }
-        const newTodo = {
+        const newTodo: Todo = {
             id: Date.now(),
             title: input,
             finished: false,
